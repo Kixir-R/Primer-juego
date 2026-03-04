@@ -14,7 +14,9 @@ func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
 	$HUD.show_game_over()
-
+	$Music.stop()
+	$DeathSound.play()
+	
 func new_game():
 	score = 0
 	$Player.start($StartPosition.position)
@@ -22,6 +24,7 @@ func new_game():
 	$HUD.update_score(score)
 	$HUD.show_message("¿Listo?")
 	get_tree().call_group("mobs", "queue_free")
+	$Music.play()
 	
 func _on_mob_timer_timeout():
 	var mob=mob_scene.instantiate()
@@ -36,7 +39,7 @@ func _on_mob_timer_timeout():
 	direction+= randf_range(-PI/ 4, PI /4)
 	mob.rotation= direction
 #Elige un vector velocidad para el enemigo
-	var velocity= Vector2(randf_range(150.0, 350.0), 0.0)
+	var velocity= Vector2(randf_range(150.0, 550.0), 0.0)
 	mob.linear_velocity= velocity.rotated(direction)
 #Hace aparecer al enemigo agregándolo a la escena principal
 	add_child(mob)

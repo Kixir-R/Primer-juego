@@ -3,6 +3,12 @@
 [ext_resource type="FontFile" uid="uid://beflb542d3t6t" path="res://assets/fonts/Xolonium-Regular.ttf" id="1_ahhtf"]
 [ext_resource type="Script" uid="uid://4pkx426bwvjc" path="res://scripts/hud.gd" id="1_oo0fn"]
 
+[sub_resource type="InputEventAction" id="InputEventAction_oo0fn"]
+action = &"Start_game"
+
+[sub_resource type="Shortcut" id="Shortcut_5ysmq"]
+events = [SubResource("InputEventAction_oo0fn")]
+
 [node name="HUD" type="CanvasLayer" unique_id=340599936]
 script = ExtResource("1_oo0fn")
 
@@ -52,6 +58,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_ahhtf")
 theme_override_font_sizes/font_size = 64
+shortcut = SubResource("Shortcut_5ysmq")
 text = "Play"
 
 [node name="MessageTimer" type="Timer" parent="." unique_id=1177855990]

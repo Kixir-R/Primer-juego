@@ -58,6 +58,7 @@ scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_m0elm")
 animation = &"caminar"
 frame_progress = 0.97434324
+speed_scale = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=397728364]
 rotation = 1.5707964
