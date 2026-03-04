@@ -45,6 +45,7 @@ color = Color(0.6313726, 0.039215688, 0.45490196, 1)
 wait_time = 0.5
 
 [node name="ScoreTimer" type="Timer" parent="." unique_id=848034981]
+wait_time = 0.2
 
 [node name="StartTimer" type="Timer" parent="." unique_id=1383915110]
 wait_time = 2.0
